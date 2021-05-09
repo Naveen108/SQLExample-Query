@@ -1,0 +1,6 @@
+select * 
+from examresult a 
+where 2 = (
+select count( distinct marks) 
+from examresult  
+b where a.marks <= b.marks )

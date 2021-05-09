@@ -1,0 +1,2 @@
+SELECT * into copyexamresult
+from examresult where 1=2;

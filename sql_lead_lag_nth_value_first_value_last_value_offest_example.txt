@@ -1,0 +1,8 @@
+select *, 
+lead (amount) over( order by payment_id) leadamount, 
+lag (amount) over( order by payment_id) lagamount,
+nth_value(amount,5) over (partition by customer_id order by amount range between unbounded preceding and unbounded following),
+first_value (amount) over (partition by customer_id order by amount),
+last_value (amount) over (partition by customer_id order by amount)
+from payment 
+limit 500 offset 100

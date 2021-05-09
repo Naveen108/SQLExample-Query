@@ -1,0 +1,9 @@
+CREATE TABLE sales (
+    visit_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    first_name VARCHAR (50) NOT NULL,
+    last_name VARCHAR (50) NOT NULL,
+    visited_at timestamp,
+    phone VARCHAR(20),
+    player_id INT NOT NULL,
+    FOREIGN KEY (player_id) REFERENCES player (player_id)
+);

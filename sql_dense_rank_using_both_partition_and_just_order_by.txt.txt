@@ -1,0 +1,18 @@
+SELECT Studentname, 
+       Subject, 
+       Marks, 
+       DENSE_RANK() OVER(PARTITION BY StudentName ORDER BY Marks ) Rank
+FROM ExamResult
+ORDER BY Studentname, 
+         Rank;
+
+
+"Isabella"	"Science"	70	1
+"Isabella"	"Maths"	70	1
+"Isabella"	"english"	90	2
+"Lily"	"Maths"	65	1
+"Lily"	"english"	70	2
+"Lily"	"Science"	80	3
+"Olivia"	"Maths"	55	1
+"Olivia"	"Science"	60	2
+"Olivia"	"english"	89	3

@@ -1,0 +1,22 @@
+SELECT *, 
+       NTILE(2) OVER(
+       ORDER BY Marks DESC) Rank
+FROM ExamResult
+ORDER BY rank;
+
+/*We use the NTILE(N)
+function to distribute the number of rows in the specified
+(N) number of groups. Each row group gets its rank as per the specified condition. 
+We need to specify the value for the desired number of groups. */
+
+
+
+"Isabella"	"english"	90	1
+"Olivia"	"english"	89	1
+"Lily"	"Science"	80	1
+"Isabella"	"Maths"	70	1
+"Lily"	"english"	70	1
+"Isabella"	"Science"	70	2
+"Lily"	"Maths"	65	2
+"Olivia"	"Science"	60	2
+"Olivia"	"Maths"	55	2

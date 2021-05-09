@@ -1,0 +1,7 @@
+
+select max(RankMarks),studentname,subject,max(marks) from (
+	select *, 
+	ROw_number() Over (Partition by subject order by marks ) 
+	RankMarks from examresult
+	) b
+group by studentname,subject

@@ -1,0 +1,4 @@
+select customer_id, sum(amount),
+ROW_NUMBER() OVER(ORDER BY sum(amount) desc) RankAmount
+from payment
+group by customer_id

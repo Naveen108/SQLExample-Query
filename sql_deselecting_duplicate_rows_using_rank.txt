@@ -1,0 +1,5 @@
+select distinct RankMarks,studentname,subject,marks from (
+	select *, 
+	Rank() Over (Partition by subject order by marks ) 
+	RankMarks from examresult
+	) b

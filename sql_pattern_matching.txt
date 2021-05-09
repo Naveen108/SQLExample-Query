@@ -1,0 +1,24 @@
+Omitting the patterns using the NOT keyword
+Use the NOT keyword to select records that don't match the pattern. This query returns all students whose first name does not begin with K.
+SELECT *
+FROM students
+WHERE first_name NOT LIKE 'K%'
+Matching a pattern anywhere using the % wildcard twice
+Search for a student in the database where he/she has a K in his/her first name.
+SELECT *
+FROM students
+WHERE first_name LIKE '%Q%'
+Using the _ wildcard to match pattern at a specific position
+The _ wildcard matches exactly one character of any type. It can be used in conjunction with % wildcard. This query fetches all students with letter K at the third position in their first name.
+SELECT *
+FROM students
+WHERE first_name LIKE '__K%'
+Matching patterns for specific length
+The _ wildcard plays an important role as a limitation when it matches exactly one character. It limits the length and position of the matched results. For example -
+SELECT * 	 /* Matches first names with three or more letters */
+FROM students
+WHERE first_name LIKE '___%'
+
+SELECT * 	 /* Matches first names with exactly four characters */
+FROM students
+WHERE first_name LIKE '____'

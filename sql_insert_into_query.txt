@@ -1,0 +1,7 @@
+insert into tablename
+(col1,col2,co3)
+values
+('asd','asda', 1),
+('asdsasd','assda', 3),
+('asdsad','assdda', 2),
+('aasdasd','asdasdasda', 5)

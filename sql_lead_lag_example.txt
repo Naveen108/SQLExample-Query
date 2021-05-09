@@ -1,0 +1,4 @@
+select *, 
+lead (amount) over( order by payment_id) leadamount, 
+lag (amount) over( order by payment_id) lagamount 
+from payment limit 10
